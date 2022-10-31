@@ -1,54 +1,57 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
         String[] language = {"C", "JAVA", "Go", "Python", "JS"};
-        double random = Math.random();
-        int num = (int) Math.round(random * (language.length - 1));
+        Random random = new Random();
+//        System.out.println(random);
+        String lan = language[random.nextInt(5)];
 
+        System.out.println("선택된 언어: " + lan);
 
-        System.out.println("선택된 언어: " + language[num]);
-
-        if (language[num] == "C") {
+        Random random1 = new Random();
+        if (lan == "C") {
             String[] C = {"게임", "실생활용"};
-            int num1 = (int) Math.round(random * (C.length - 1));
-            System.out.println("선택된 범위: " + C[num1]);
-            if (C[num1] == "게임") {
+            String c1 = C[random1.nextInt(2)];
+            System.out.println("선택된 범위: " + c1);
+            Random random2 = new Random();
+            if (c1 == "게임") {
                 String[] game_c = {"테트리스", "오목", "뱀게임", "틱택토 게임", "팩맨"};
-                int num2 = (int) Math.round(random * (game_c.length - 1));
-                System.out.println("최종 선택: " + game_c[num2]);
-            } else if (C[num1] == "실생활용") {
+                String ga_c = game_c[random2.nextInt(5)];
+                System.out.println("최종 선택: " + ga_c);
+            } else if (c1 == "실생활용") {
                 String[] project_c = {"계산기", "달력", "단위 변환기", "행렬계산기"};
-                int num3 = (int) Math.round(random * (project_c.length - 1));
-                System.out.println("최종 선택: " + project_c[num3]);
+                String pro_c = project_c[random2.nextInt(4)];
+                System.out.println("최종 선택: " + pro_c);
             }
-        } else if (language[num] == "JAVA") {
+        } else if (lan == "JAVA") {
             String[] java = {"웹", "안드로이드", "exe"};
-            int num4 = (int) Math.round(random * (java.length - 1));
-            System.out.println("선택된 범위: " + java[num4]);
-            if (java[num4] == "웹" || java[num4] == "안드로이드") {
+            String ja1 = java[random1.nextInt(3)];
+            System.out.println("선택된 범위: " + ja1);
+            Random random3 = new Random();
+            if (ja1 == "웹" || ja1 == "안드로이드") {
                 String[] project_java = {"여행사", "약국찾기", "SNS서비스"};
-                int num5 = (int) Math.round(random * (project_java.length - 1));
-                System.out.println("최종 선택: " + project_java[num5]);
-            } else if (java[num4] == "exe") {
+                String ja2 = project_java[random3.nextInt(3)];
+                System.out.println("최종 선택: " + ja2);
+            } else if (ja1 == "exe") {
                 String[] pro_java = {"게임", "유틸리티"};
-                int num6 = (int) Math.round(random * (pro_java.length - 1));
-                System.out.println("최종 선택: " + pro_java[num6]);
+                String ja3 = pro_java[random3.nextInt(3)];
+                System.out.println("최종 선택: " + ja3);
             }
-        } else if (language[num] == "GO") {
+        } else if (lan == "Go") {
             String[] go = {"웹서비스", "etc"};
-            int num7 = (int) Math.round(random * (go.length - 1));
-            System.out.println("최종 선택: " + go[num7]);
-        } else if (language[num] == "Python") {
+            String go1 = go[random1.nextInt(2)];
+            System.out.println("최종 선택: " + go1);
+        } else if (lan == "Python") {
             String[] python = {"유틸리티", "게임", "웹크롤링", "웹개발", "머신?딥러닝"};
-            int num8 = (int) Math.round(random * (python.length - 1));
-            System.out.println("최종 선택: " + python[num8]);
-        } else if (language[num] == "JS") {
+            String py1 = python[random1.nextInt(5)];
+            System.out.println("최종 선택: " + py1);
+        } else if (lan == "JS") {
             String[] js = {"실시간 채팅", "카카오톡 봇", "인스타그램? 같은것"};
-            int num9 = (int) Math.round(random * (js.length - 1));
-            System.out.println("최종 선택: " + js[num9]);
+            String js1 = js[random1.nextInt(3)];
+            System.out.println("최종 선택: " + js1);
         }
-
     }
 }
